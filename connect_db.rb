@@ -1,10 +1,11 @@
-require "record"
+require "active_record"
+
 def connect_db!
   ActiveRecord::Base.establish_connection(
-    host: "host",
-    adapter: "mysql",
-    database: ENV["DATABASE"],
-    user: ENV["USERS"],
-    password: ENV["PASSWORD"],
+    host: "localhost",
+    adapter: "postgresql",
+    database: ENV["PG_DATABASE"],
+    user: ENV["PG_USER"],
+    password: ENV["PG_PASSWORD"],
   )
 end
